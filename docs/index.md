@@ -40,6 +40,9 @@ Conduct](https://github.com/Cargill/code-of-conduct/blob/master/code-of-conduct.
 
   * [Stable feature checklist](community/stable_feature_checklist.md)
 
+  * [Generating Insecure Certificates for Development](howto/generate_insecure_certificates_for_development.md)
+
+
 ## Reference Guides
 
   * [Splinter API Reference](https://docs.rs/splinter):
