@@ -43,3 +43,5 @@ The documentation is organized as follows:
 
 * ``upgrading/``: In-depth guides for upgrading from one version of Splinter
   to another version.
+
+<!-- Copyright 2019-2020 Cargill Incorporated -->

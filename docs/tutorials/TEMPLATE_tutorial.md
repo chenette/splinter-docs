@@ -1,3 +1,5 @@
+<!-- Copyright 2019-2020 Cargill Incorporated -->
+
 # Tutorial Title: Task (+ing) + Noun Phrase
 
 <!--
