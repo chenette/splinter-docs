@@ -30,7 +30,8 @@ use the `splinter` CLI to generate the development certificates. The `splinter`
 CLI provides a subcommand called `splinter cert generate` which will generate
 development certificates and keys files.
 
-The `splinter cert generate` command creates the following certificates and keys:
+The `splinter cert generate` command creates the following certificates and
+keys:
   - `client.crt`
   - `client.key`
   - `server.crt`
@@ -197,7 +198,7 @@ For more information, check the command's help text:
     $ scabbard contract upload --help
 ```
 
-## The circuits, node registry and key registry REST API routes now begin with admin
+## Circuits, node registry and key registry REST API routes now begin with admin
 If you are using /keys, /nodes, or /circuits REST APIs directly in your
 application, you need to update the endpoints in your code.
 

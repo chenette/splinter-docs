@@ -41,7 +41,9 @@ A Splinter deployment usually has the following items:
 
 # Splinter Architecture
 
-Splinter is a privacy-focused platform for distributed applications that provides a blockchain-inspired networking environment for communication and transactions between organizations.
+Splinter is a privacy-focused platform for distributed applications that
+provides a blockchain-inspired networking environment for communication and
+transactions between organizations.
 
 Splinter provides a networking layer and services for running smart contracts so
 that applications can build upon this functionality. A Splinter network allows
