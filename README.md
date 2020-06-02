@@ -10,7 +10,7 @@ and transactions between organizations. The open-source Splinter software is
 hosted at [github.com/Cargill/splinter](https://github.com/Cargill/splinter).
 
 This repository contains the source files for the [Splinter
-documentation](docs/index.md), which is
+documentation](https://www.splinter.dev/docs/), which is
 in [GitHub Flavored Markdown](https://github.github.com/gfm/) (GFM) format.
 For more information, see [docs/README.md](docs/README.md).
 
