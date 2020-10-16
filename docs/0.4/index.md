@@ -6,29 +6,26 @@
   https://creativecommons.org/licenses/by/4.0/
 -->
 
-Splinter is a privacy-focused platform for building distributed applications
-with your choice of distributed ledger technology. Splinter's innovative
-architecture provides a **privacy-first networking layer**, support for
-**customized smart contracts** and your **choice of consensus**, and **APIs for
-developing enterprise applications**.
+Splinter is the platform that will enable the next generation of distributed
+applications.
 
-Splinter is not just a distributed ledger platform. Instead, Splinter is a
-**flexible distributed platform** that can support a variety of distributed
-ledger patterns and consensus algorithms. Its modular architecture allows you to
-choose the underlying distributed ledger software that best suits the needs of
-your consortium, while providing true privacy for participants.
+With a purpose-built architecture anchored in values of privacy
+and flexibility, Splinter provides a **privacy-first networking layer**, support
+for **customized smart contracts** with configurable **consensus models**, and
+**APIs for developing enterprise applications**.
 
-The combination of Splinter's architecture and powerful feature set supports a
-wide variety of application patterns with your choice of enterprise integration,
-application interfaces, and transaction processing.
-
-This topic describes Splinter's key benefits:
+Splinter's powerful feature set and agile architecture support a wide variety of
+application patterns and integration with existing enterprise systems.
+Learn about Splinter's key benefits:
 
 * [True privacy with circuits](#true-privacy-with-circuits)
-* [Distributed ledger platform as a service](#distributed-ledger-platform-as-a-service)
-* [Flexibility with Splinter's modular architecture](#flexibility-with-splinters-modular-architecture)
+* [Distributed ledger platform as a service with Scabbard and
+  WASM](#distributed-ledger-platform-as-a-service-with-scabbard-and-wasm)
+* [Flexibility with Splinter's modular
+   architecture](#flexibility-with-splinters-modular-architecture)
 * [Smart contracts that can share state](#smart-contracts-that-can-share-state)
-* [Quick startup for application development](#quick-startup-for-application-development)
+* [Easy application development with robust APIs and
+  examples](#easy-application-development-with-apis-and-examples)
 * [Event subscription for state changes](#event-subscription-for-state-changes)
 * [Complex patterns for data flow](#complex-patterns-for-data-flow)
 * [Auditable open source](#auditable-open-source)
@@ -38,25 +35,27 @@ choice](#why-not-splinter).
 
 ## True Privacy with Circuits
 
-Splinter was designed for privacy from the beginning, with a simple architecture
+Splinter was designed with a privacy-first mindset, with a simple architecture
 that reduces operational complexity.
 
-**Circuits** are private groups of nodes within a larger network that provide
-private communication for the participants in that circuit. Only the members of
-a circuit can see the transactions and shared state for the circuits they are
-involved in. Not only are circuit messages and transactions private between
-members &mdash; even circuit membership is hidden from other Splinter nodes.
+**Circuits** are discrete connections between groups of Splinter nodes within a
+larger network that provide private communication for the connected parties.
+Only the members of a circuit have visibility into the circuit's transaction execution
+and shared state. Not only are circuit messages and transactions private between
+members &mdash; even circuit membership is hidden from non-circuit-member
+Splinter nodes in the network.
 
-This key feature means that Splinter is significantly different from blockchain
+Circuits make Splinter significantly different from traditional blockchain
 platforms with privacy features that can leak information to management nodes or
-administrators. Because Splinter doesn't send private information to external
-nodes, it is appropriate for advanced application architectures that require
-participants to be hidden from each other.
+administrators. Simply put, Splinter doesn't send private circuit information to
+any non-circuit nodes.
+
+Additional features of Splinter's circuit architecture:
 
 * Splinter circuits are **fully decentralized**, for both operation and
-  management. Splinter circuits require only the participating nodes. No
-  separate management node is needed to order, preprocess, notarize, endorse, or
-  validate transactions.
+  management. No separate management node is needed to order, preprocess,
+  notarize, endorse, or validate transactions. Splinter circuits require only
+  the participating nodes.
 
 * Circuits are **dynamic** &mdash; they can be created as needed with a secure
   set of messages between participant nodes. Splinter nodes accept peer
@@ -71,16 +70,16 @@ participants to be hidden from each other.
 * Splinter circuits **share state privately** &mdash; with circuit members only.
   No central database is required for storing data changes or state information.
 
-## Distributed Ledger Platform as a Service
+## Distributed Ledger Platform as a Service with Scabbard and WASM
 
-Splinter uses services to provide distributed ledger functionality, including
-transaction processing, a consensus mechanism or other agreement protocol, and
-smart contracts. This feature allows Splinter to support a variety of
-distributed ledger models, unlike other platforms that embed their distributed
-ledger functionality in the core architecture.
+Splinter uses **services** to provide distributed ledger functionality,
+including transaction processing, a consensus mechanisms, and smart contracts.
+This feature allows Splinter to flexibly support a variety of distributed ledger
+models, unlike other platforms that embed their distributed ledger functionality
+in the core architecture.
 
-Splinter provides the Scabbard service as an example implementation of a
-distributed ledger platform. Scabbard includes the following components:
+Out of the box, Splinter provides the Scabbard service as a distributed ledger
+platform. Scabbard includes the following components:
 
 * [Hyperledger Transact](https://github.com/hyperledger/transact), a
   platform-agnostic Rust library for executing transactions from on-ledger smart
@@ -95,15 +94,18 @@ distributed ledger platform. Scabbard includes the following components:
   a simple agreement protocol (instead of a complex consensus algorithm) for
   stable, multi-party networks with trusted participants.
 
-It's important to explain exactly what "distributed ledger" means for Scabbard,
-because other platforms use this term differently. In general, a distributed
-ledger implements a shared database using public–private key cryptography,
-transaction rules, and an agreement protocol (usually a consensus mechanism) for
-accepting those transactions.
+<!-- ------------------------------------------ -->
 
-Scabbard is a distributed ledger implementation designed around the following
-essential principles that enable multi-party trust and provide a strong platform
-for distributed ledger applications.
+It's important to explain exactly what "distributed ledger" means for Scabbard,
+because other platforms use this term differently.
+
+With Scabbard, the distributed ledger implements a shared database using
+public–private key cryptography, transaction rules, and an agreement protocol
+(usually a consensus mechanism) for accepting those transactions.
+
+Scabbard enables multi-party trust and provides a strong platform for
+distributed applications. Scabbard is anchored in the following essential
+principles:
 
 * **State agreement is guaranteed with state proofs.**
 
@@ -148,9 +150,11 @@ replacing the Scabbard service with a different service or set of services.
 Splinter supports both single and multiple processes for distributed ledger
 components. Other blockchain platforms have separate processes for the
 validator, consensus engine, and smart contract engine (or transaction processor
-functionality). The optional Scabbard service in Splinter combines all
-transaction management functionality as a single process. However, Splinter also
-allows multiple processes for distributed ledger components.
+functionality).
+
+Scabbard provides transaction management functionality that runs as a single
+process. Note that Splinter also supports multiple processes for distributed
+ledger components.
 
 Splinter's consensus API allows pluggable consensus, which means that a service
 can provide a consensus engine for the algorithm or agreement protocol that best
@@ -166,7 +170,7 @@ communication mechanisms.
 
 * Because Splinter provides agnostic communication across various transport
   layers, such as TCP or TLS, it can easily be extended to additional transport
-  layers by implementing a few simple Rust traits.
+  layers.
 
 ## Smart Contracts That Can Share State
 
@@ -188,13 +192,7 @@ another smart contract's state, as controlled by Sabre permissions. Splinter's
 design for sharing state simplifies the complex approach of other blockchain
 platforms, where sharing state means embedding one smart contract into another.
 
-Sabre's smart contracts are compatible with [Hyperledger
-Sawtooth](https://github.com/hyperledger/sawtooth-core). You can write a
-Sawtooth transaction processor (Sawtooth's version of a smart contract) in Rust,
-then convert it to a Sabre smart contract that can be used for a Splinter
-circuit.
-
-## Quick Startup for Application Development
+## Easy Application Development with APIs and Examples
 
 Splinter includes several APIs for application development:
 
@@ -205,8 +203,8 @@ Splinter includes several APIs for application development:
   However, Splinter is designed to support other smart contract engines and
   transaction processing software.
 
-* **Consensus API** for building custom consensus protocols. The Scabbard
-  service currently includes the multi-party [two-phase
+* **Consensus API** for building and registering custom consensus protocols.
+  The Scabbard service currently includes the multi-party [two-phase
   commit](https://en.wikipedia.org/wiki/Two-phase_commit_protocol) agreement
   protocol instead of a consensus protocol. The consensus API makes it easy to
   add other types of consensus, such as Byzantine Fault Tolerant (BFT) or Proof
@@ -216,22 +214,26 @@ Splinter includes several APIs for application development:
   the Scabbard service uses this API to expose endpoints for smart contract
   submission.
 
-Splinter provides a growing list of optional features that are needed by many
-applications, so that application developers don't have to reimplement this
-common functionality. For example, the **application authorization handler**
-manages notifications for pending circuit proposals and lets an application
-register for specific proposal-related events. The **Biome** component provides
-user and private key management, which helps bootstrap applications that need to
-add smart contract capabilities to an existing infrastructure that doesn't
-already include the concept of transactions signed by a user.
+Splinter also provides a growing list of optional features that are needed by
+many application developers. Two examples:
 
-Splinter's experimental features allow optional access to new functionality.
-Because Splinter is undergoing rapid development, new capabilities are initially
-added as experimental Rust features that are exposed by the `splinter` library.
-This lets developers access bleeding-edge features in a controlled way, because
-these features often change before they are stabilized. (Biome is an example of
-a Splinter component that was added as an experimental feature.) Developer
-feedback is strongly encouraged for experimental features.
+* The **application authorization handler** manages notifications for pending
+  circuit proposals and lets an application register for specific
+  proposal-related events.
+
+* The **Biome** component provides user and private key management, which helps
+  bootstrap applications that need to add smart contract capabilities to an
+  existing infrastructure that doesn't already include the concept of
+  transactions signed by a user.
+
+In addition, Splinter's experimental features allow optional access to new
+functionality.  Because Splinter is undergoing rapid development, new
+capabilities are initially added as experimental Rust features that are exposed
+by the `splinter` library.  This lets developers access bleeding-edge features
+in a controlled way, because these features often change before they are
+stabilized. (Biome is an example of a Splinter component that was added as an
+experimental feature.) Developer feedback is strongly encouraged for
+experimental features.
 
 Splinter provides [Gameroom]({% link docs/0.4/examples/gameroom/index.md %}) as
 a complete example for building smart-contract-based applications with the
